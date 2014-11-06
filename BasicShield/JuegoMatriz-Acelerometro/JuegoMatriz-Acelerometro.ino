@@ -228,30 +228,3 @@ SIGNAL(TIMER2_OVF_vect){
   shiftOut(pinDatos, pinReloj, MSBFIRST, array_display[Xp]); 
   digitalWrite(pinLatch, HIGH);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
