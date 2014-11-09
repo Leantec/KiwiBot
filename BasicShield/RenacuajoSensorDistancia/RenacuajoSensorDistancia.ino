@@ -18,7 +18,7 @@ int t=0;    // variable para que gire cada vez en un sentido
 // will quickly become a bigger number than can be stored in an int.
 unsigned long previousMillis = 0;        // 
 unsigned long currentMillis =0;
-long interval = 500;   
+long interval = 100;   // intervalo con el que revisa el sensor
 
 void setup(){
   pinMode (servoRPin, OUTPUT);
@@ -47,7 +47,7 @@ void go_back(){ //Rutina para que el coche retroceda
   digitalWrite(servoRPin,LOW);
   delayMicroseconds(18000);
 }
-void turn_right(){ //Rutina para que el coche gire a la derecha
+void turn_left(){ //Rutina para que el coche gire a la derecha
   digitalWrite(servoRPin,HIGH);
   digitalWrite(servoLPin,HIGH);
   delayMicroseconds(2000);// 1 - 1500 atras, de 1500 a 3000 delante 
@@ -55,7 +55,7 @@ void turn_right(){ //Rutina para que el coche gire a la derecha
   digitalWrite(servoLPin,LOW);
   delayMicroseconds(18000);
 }
-void turn_left(){ //Rutina para que el coche gire a la izquierda
+void turn_right(){ //Rutina para que el coche gire a la izquierda
   digitalWrite(servoRPin,HIGH);
   digitalWrite(servoLPin,HIGH);
   delayMicroseconds(1000);// 1 - 1500 atras, de 1500 a 3000 delante 
@@ -90,18 +90,18 @@ void loop(){
     previousMillis = currentMillis;   
     medir();
   }
-  if(distancia>15){
+  if(distancia >= 20){
     go_forward();
   }
-  if (distancia<15){
-    if (t=0){
-      for (i=0; i<500; i++){
+  if (distancia>0 && distancia<20){
+    if (t==0){
+      for (i=0; i<150; i++){
         turn_right();
       }
       t=1;
     }
     else{
-      for (i=0; i<500; i++){
+      for (i=0; i<150; i++){
         turn_left();
       }
       t=0;
