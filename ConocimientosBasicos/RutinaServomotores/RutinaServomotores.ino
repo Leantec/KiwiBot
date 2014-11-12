@@ -18,11 +18,6 @@ boolean lectura=0; //Puede ser uno o cero. Reconoce si estamos mandando algo.
 void setup() {
   pinMode (servoRPin, OUTPUT);
   pinMode (servoLPin, OUTPUT);
-  pinMode(ledRPin, OUTPUT);
-  pinMode(ledGPin, OUTPUT);
-  pinMode(ledBPin, OUTPUT); //Establece los cuatro pines del motor driver como salidas.
-  pinMode(buzzerPin, OUTPUT);
-
   Serial.begin(9600); //Establece conexión con el puerto serie
 }
 void go_forward(){ //Rutina para que el coche avance
