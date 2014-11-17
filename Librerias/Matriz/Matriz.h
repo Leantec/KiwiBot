@@ -11,6 +11,7 @@ public:
   void imprimirPantalla(byte fila, byte columna);
   void imprimirNumero(byte valor);
   void imprimirPixel(byte x0, byte y0);
+  void printLine(byte x2, byte y2, byte x3, byte y3);
   void limpiarPantalla();
 
   // library-accessible "private" interface

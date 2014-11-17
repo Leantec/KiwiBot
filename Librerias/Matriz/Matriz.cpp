@@ -65,6 +65,21 @@ void Matriz::imprimirNumero(byte valor){
   }
 }
 
+void Matriz::printLine(byte x2, byte y2, byte x3, byte y3){
+  byte x;
+  byte y;
+  byte xIni=x2;
+  byte xFin=x3;
+  byte yIni=y2;
+  byte yFin=y3;
+  for(x=1; x<8; x++){
+    if(x>=xIni && x<=xFin){
+      y=(((yFin-yIni)*(x-xIni))/(xFin-xIni))+yIni;
+      imprimirPixel(x, y);
+    }
+  }
+}
+
 void Matriz::imprimirPixel(byte x0, byte y0){
   byte x=x0;
   byte y=y0;
