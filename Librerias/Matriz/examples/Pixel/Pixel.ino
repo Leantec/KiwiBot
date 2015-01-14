@@ -4,5 +4,5 @@ Matriz matriz(6, 9, 5);
 void setup(){
 }
 void loop(){
-  matriz.imprimirPixel(1, 2); //Pixel en las coordenadas X, Y
+  matriz.imprimirPixel(3, 5); //Pixel en las coordenadas i, j
 }

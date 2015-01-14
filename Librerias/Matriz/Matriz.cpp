@@ -4,10 +4,10 @@
 byte Matriz::columna[5] = {
 B1101111, B1110111, B1111011, B1111101, B1111110};
 
-byte Matriz::y1[5] = {
-B1111110, B1111101, B1111011, B1110111, B1101111};
+byte Matriz::i1[5] = {
+B1101111, B1110111, B1111011, B1111101, B1111110};
 
-byte Matriz::x1[7] = {
+byte Matriz::j1[7] = {
 B1000000, B0100000, B0010000, B0001000, B0000100, B0000010, B0000001};
 
 byte Matriz::unidad[] = {
@@ -65,25 +65,25 @@ void Matriz::imprimirNumero(byte valor){
   }
 }
 
-void Matriz::printLine(byte x2, byte y2, byte x3, byte y3){
-  byte x;
-  byte y;
-  byte xIni=x2;
-  byte xFin=x3;
-  byte yIni=y2;
-  byte yFin=y3;
-  for(x=1; x<8; x++){
-    if(x>=xIni && x<=xFin){
-      y=(((yFin-yIni)*(x-xIni))/(xFin-xIni))+yIni;
-      imprimirPixel(x, y);
+void Matriz::printLine(byte i2, byte j2, byte i3, byte j3){
+  byte i;
+  byte j;
+  byte iIni=i2;
+  byte iFin=i3;
+  byte jIni=j2;
+  byte jFin=j3;
+  for(j=1; j<8; j++){
+    if(j>=jIni && j<=jFin){
+      i=(((iFin-iIni)*(j-jIni))/(jFin-jIni))+iIni;
+      imprimirPixel(i, j);
     }
   }
 }
 
-void Matriz::imprimirPixel(byte x0, byte y0){
-  byte x=x0;
-  byte y=y0;
-  imprimirPantalla(y1[y-1], x1[x-1]);
+void Matriz::imprimirPixel(byte i0, byte j0){
+  byte i=i0;
+  byte j=j0;
+  imprimirPantalla(i1[i-1], j1[j-1]);
 }
 
 void Matriz::imprimirPantalla(byte fila, byte columnaa){
